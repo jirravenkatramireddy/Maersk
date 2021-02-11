@@ -1,0 +1,59 @@
+/* .bg-lights{
+    background-color: #fff;
+    border-bottom: 4px;
+    box-shadow: 5px 5px 5px #F4F4F4;
+} */
+
+.margLab{
+    margin-top: 3%;
+}
+
+.uname{
+    font-weight: bold;
+    color: #09338F;
+    font-size: 17px
+}
+
+.modal-body {
+    height: 130px;
+    width:475px;
+    margin:10px;
+    margin-top:10px;
+
+  
+}
+
+.create{
+    width:150px;
+    height:50px;
+    background-color: #09338F;
+    border-radius: 24px;
+    color:#fff;
+    font-size: 18px;
+    font-family: "Segoe UI" , "Segoe" , "Semibold";
+    border:0px;
+  
+    }
+
+    
+.cancel{
+
+    /* width:128px; */
+
+    width:150px;
+    height:50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 24px;
+    color:#09338F;
+    font-size: 18px;
+    font-family: "Segoe UI" , "Segoe" , "Semibold";
+    border: 1px solid #09338F;
+margin-right:10px;
+
+}
+    .mrg-tp10{
+        margin-top:10px;
+    }
+.pointer{
+    cursor: pointer;
+}

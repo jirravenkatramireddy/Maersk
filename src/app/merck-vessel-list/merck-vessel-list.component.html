@@ -1,0 +1,321 @@
+<app-loader [hidden]="!loaderProgress"></app-loader>
+<mat-card class="card-container  cardradius">
+    <div class="row subheader-align mt-1">
+
+      <!-- <div class="col-lg-1 col-md-1"  *ngIf="gatedetails">
+        <div class="row" >
+            <div class="col-lg-4 col-md-1"  >
+                <img src="../../../assets/images/iconBack.png" class="subheader1-img-icon pointer" (click)="gotoDashboard()" >
+            </div>
+
+            <div class="col-lg-8 col-md-1">
+                <img src="../../../assets/images/iconBackSeperator.png" class="subheader1-icon-separator">
+            </div>
+        </div>
+
+    </div> -->
+
+      <div class="col-lg-2 col-md-2">
+        <!-- <img src="../../../assets/images/iconBackSeperator.png" class="separatoralign"> -->
+        <div class="row subheader-align-mytp">
+          <div class="col-lg-3 col-md-3">
+            <img src="../../../assets/images/iconPort.png" class="portalign" />
+          </div>
+          <div class="col-lg-9 col-md-9">
+            <mat-label class="textco">
+              {{terminal}} - {{terminalName}}</mat-label>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1"  > 
+      </div>
+      <div class="col-lg-5 col-md-5">
+
+                  </div>
+      <!-- <div class="col-lg-6 col-md-6"> -->
+        <!-- <div class="row "> -->
+
+          <div class="col-md-2">
+            <div class="row datealign1">
+
+              <div class="col-lg-12 col-md-12">
+                <mat-label class="textco">
+                  Date Range:
+                </mat-label>
+              <!-- </div> -->
+              <br>
+              <!-- </div> -->
+              <!-- <div class="row"> -->
+              <!-- <div class="col-lg-12 col-md-12"> -->
+                <mat-label class="textco">
+                  <input id="datepic" type="text" ngxDaterangepickerMd [locale]="{ format: 'DD/MM/YYYY' }" [(ngModel)]="selected" placeholder="MM/DD/YYYY - MM/DD/YYYY"
+                    class="drpstyle" triggers="" startKey="start" endKey="end"   />
+                  <label for="datepic">
+                    <img src="../../../assets/images/iconDatePicker.png" class="datealign" />
+                  </label>
+
+                </mat-label>
+              </div>
+
+
+            </div>
+            </div>
+            <!-- <div class="col-md-3 dropdownColPos"  >
+            
+                  <select [(ngModel)]="dropdownValue"  name="first" class="dropdownPos" >
+                    <option *ngFor="let value of options">
+                      {{value.name}}
+                    </option>
+                  </select>
+
+
+            </div> -->
+            <div class="col-md-1 SearchColPos" >
+                  <button type="button" class="btn1 btn-info rowradius serachProper"  (click)="search(true);" >
+                        View
+                      </button>
+                      </div>
+          <!-- </div> -->
+
+
+        <!-- </div> -->
+      <!-- </div> -->
+    </div>
+  </mat-card>
+
+<!-- <app-merck-subheader></app-merck-subheader> -->
+<div class="row cardsvessel">
+  <div class="col-md-4">
+    <mat-card class="cardColor"> 
+        <div class="col-md-12 mx-2 colortxt fontSize1">
+      Total Vessel Count
+        </div>
+   <div class="row ">
+       <div class="col-md-6">
+           <img src="../../../assets/images/iconVessel1.png" class="portalign2" />
+      </div>
+  <div class="col-md-3"></div>
+  <div class="col-md-3 colortxt alignTxt">
+  {{vesselCount}}
+  </div>
+  </div>
+   </mat-card>
+</div>
+<div class="col-md-8">
+    <mat-card class="cardColor">
+     <div class="col-md-12 mx-2 colortxt fontSize1">
+       Container
+     </div>
+     <div class="row ">
+       <div class="col-md-4">
+          <img src="../../../assets/images/iconPort.png" class="portalign1" /> 
+       </div>
+       <div class="col-md-2 colortxt1">
+         Gate In
+       </div>
+       <div class="col-md-2 colortxt alignTxt">
+          {{gateInCount}}
+       </div>
+       <div class="col-md-2 colortxt1">
+          Gate Out
+        </div>
+        <div class="col-md-2 colortxt alignTxt">
+            {{gateOutCount}}
+        </div>
+     </div>
+    </mat-card>
+    </div>
+</div>
+
+<!-- Vessel Details -->
+<div class="container-fluid no-padding vesselContainerPos" *ngIf="vesseldetails">
+  <table *ngIf="elements" class="table table1">
+    <thead>
+      <tr  >
+        <th class="rowradius"></th>
+        <th *ngFor="let head of headElements" class="rowradius">{{ head }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of elements" >
+        <td class="rowradius"></td>
+        <td class="tabsp" >
+          <div class="vesselnm">{{ el.vesselName }}
+            <br />
+          </div>
+          <div class="coord">
+              {{ el.vesselCode }}|{{ el.voyageNumber }}
+          </div>
+        </td>
+        <td class="tabsp">{{ el.eta }}</td>
+        <td class="tabsp">{{ el.etd }}</td>
+        <!-- <td>{{ el.load_list_line.container_details.dangerous_cargo.unno }}</td> -->
+        <!-- <td>{{ el.load_list_line.container_details.dangerous_cargo.imo_class }}</td> -->
+        <td class="tabsp">{{ el.vesselImo }}</td>
+        <td class="tabsp">{{ el.vesselClass }}</td>
+        <td class="tabsp rowradius">
+          <button type="button" class="btn btn-info details seedetails rowradius" (click)="goToDetailsPage(el)">
+            See Details
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-merck-footer [childMessage]="parentMessage"></app-merck-footer>
+</div>
+
+
+<!-- /*  ******gateinOutPage****/ -->
+<div class="container-fluid" *ngIf="gatedetails">
+<mat-card class="matGatePos " style="padding-left: 30px">
+    <div class="row">
+        <div class="col-md-6">
+            <mat-card class="cursorEnable" (click)="gotoGateInPage()">
+              <div class="row">
+                  <div class="col-md-3 gateImgPos"><img src="../../../assets/images/iconGateIn.png"></div>
+                  <div class="col-md-6 gateLabelProperties">GATE IN - MYPTP - Port of Loading</div>
+                  <div class="col-md-3 gateValueProperties" >{{gateInCount}}</div>
+              </div>
+            </mat-card>
+        </div>
+        <div class="col-md-6">
+            <mat-card class="cursorEnable" (click)="gotoGateOutPage()">
+                <div class="row">
+                    <div class="col-md-3 gateImgPos" ><img src="../../../assets/images/iconGateOut.png"></div>
+                    <div class="col-md-6 gateLabelProperties" >GATE OUT - MYPTP - Port of Discharge</div>
+                    <div class="col-md-3 gateValueProperties" >{{gateOutCount}}</div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    </mat-card>
+
+    <div class="col-md-12" *ngIf="gatein" >
+        <div class="mx-3 mt-3">
+            <mat-label class="GateInMatLabelProperties">Gate In - Port of Loading</mat-label>
+        </div>
+        <mat-card class="GateInMarCardProperties">
+            <div class="container-fluid ">
+                  <mat-form-field >
+                          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                      </mat-form-field>
+                  <table mat-table [dataSource]="dataSource" matSort matSortActive="alertDate" matSortDirection="desc" >
+
+                          <!-- Position Column -->
+                          <ng-container matColumnDef="containerNo">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Container No.
+                              </th>
+                              <td mat-cell *matCellDef="let element"> {{element.containerNo }} </td>
+                          </ng-container>
+
+                          <!-- Name Column -->
+                          <ng-container matColumnDef="fullEmpty">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Full/Empty </th>
+                              <td mat-cell *matCellDef="let element"> {{element.fullEmpty}} </td>
+                          </ng-container>
+
+                          <!-- Weight Column -->
+                          <ng-container matColumnDef="partner">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Owner/Partner </th>
+                              <td mat-cell *matCellDef="let element"> {{element.partner}} </td>
+                          </ng-container>
+
+                          <!-- Symbol Column -->
+                          <ng-container matColumnDef="weight">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Weight
+                              </th>
+                              <td mat-cell *matCellDef="let element"> {{element.weight}}
+                                  </td>
+                          </ng-container>
+
+
+                          <ng-container matColumnDef="transportMode">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Transport Mode
+                              </th>
+                              <td mat-cell *matCellDef="let element"> {{element.transportMode}} </td>
+                          </ng-container>
+
+
+                          <ng-container matColumnDef="effectiveDate">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Effective Date
+                              </th>
+                              <td mat-cell *matCellDef="let element"> {{element.effectiveDate}} </td>
+                          </ng-container>
+
+
+
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                      </table>
+
+                      </div>
+        </mat-card>
+
+    </div>
+
+    <div class="col-md-12" *ngIf="gateout" >
+        <div class="mx-3 mt-3">
+            <mat-label class="GateInMatLabelProperties">Gate Out - Port of Discharge</mat-label>
+        </div>
+        <mat-card class="GateInMarCardProperties" >
+            <div class="container-fluid ">
+                  <mat-form-field >
+                          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                      </mat-form-field>
+                  <table mat-table [dataSource]="dataSource" matSort matSortActive="alertDate" matSortDirection="desc" >
+
+                          <!-- Position Column -->
+                          <ng-container matColumnDef="containerNo">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Container No.
+                              </th>
+                              <td mat-cell *matCellDef="let element"> {{element.containerNo }} </td>
+                          </ng-container>
+
+                          <!-- Name Column -->
+                          <ng-container matColumnDef="fullEmpty">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Full/Empty </th>
+                              <td mat-cell *matCellDef="let element"> {{element.fullEmpty}} </td>
+                          </ng-container>
+
+                          <!-- Weight Column -->
+                          <ng-container matColumnDef="partner">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Owner/Partner </th>
+                              <td mat-cell *matCellDef="let element"> {{element.partner}} </td>
+                          </ng-container>
+
+                          <!-- Symbol Column -->
+                          <ng-container matColumnDef="weight">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Weight
+                              </th>
+                              <td mat-cell *matCellDef="let element"> {{element.weight}}
+                                  </td>
+                          </ng-container>
+
+
+                          <ng-container matColumnDef="transportMode">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Transport Mode
+                              </th>
+                              <td mat-cell *matCellDef="let element"> {{element.transportMode}} </td>
+                          </ng-container>
+
+
+                          <ng-container matColumnDef="effectiveDate">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Planned/Effective Date
+                              </th>
+                              <td mat-cell *matCellDef="let element"> {{element.effectiveDate}} </td>
+                          </ng-container>
+
+
+
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                      </table>
+
+                      </div>
+                      </mat-card>
+    </div>
+</div>
+<!-- gateinout Ends -->
+<!-- <mat-card class="card-container footer"> -->
+<!-- <app-merck-footer [childMessage]="parentMessage"></app-merck-footer> -->
+<!-- </mat-card> -->

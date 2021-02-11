@@ -1,0 +1,178 @@
+/* div {
+    text-align: center;
+  }
+.span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .outer-line {
+    width: 18%;
+    border-bottom: 1px solid black;
+  }
+
+  .outer-line1 {
+    width: 18%;
+    border-bottom:dotted;
+    color: slategrey;
+    margin-bottom: 31px;
+  }
+  .outer-line2 {
+    width: 10%;
+    border-bottom:dotted;
+    color: slategrey;
+    margin-bottom: 31px;
+  }
+  .outer-line3 {
+    width: 2%;
+    border-bottom:dotted;
+    color: slategrey;
+    margin-bottom: 31px;
+  }
+
+ 
+
+
+  
+
+  .container{
+      width: 100%;
+  }
+
+  .progressbar{
+    counter-reset: step;
+   width: 127%;
+   margin-left: -93px;
+  }
+  .progressbar li{
+      list-style-type: none;
+      float:left;
+      width:14.33%;
+      position: relative;
+      text-align: center;
+  }
+
+  .progressbar li:before{
+      
+      counter-increment: step;
+      width:25px;
+      height: 25px;
+      line-height: 25px;
+      border: 1px solid #ddd;
+      display: block;
+      text-align: center;
+      margin: 0 auto 10px auto;
+      border-radius: 50%;
+      background-color: white;
+  }
+
+  .progressbar li:after{
+      content:'';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: black;
+      top:51px;
+      left:-50%;
+      z-index: -1;
+
+    
+  }
+  .progressbar li:first-child:after{
+      content:none;
+  }
+
+  .progressbar li.active{
+      color: darkblue;
+  }
+  .progressbar li.inactive{
+    color: silver;
+}
+
+  .progressbar li.active:before{
+      border-color: slategrey;
+  }
+
+  .progressbar li.active + li:after{
+      background-color: white;
+    border: dotted;
+    color: silver;
+    }
+
+    .progressbar li.inactive + li:after {
+        background-color: white;
+      border: dotted;
+      color:silver;
+     
+    }
+
+    .imagePos{
+        padding-left: 120px;display: block;
+        height: 54px;
+    }
+    .imagePos1{
+        margin-top: 33px;
+                   margin-left: 30px;
+    }
+    
+    .flowPos{
+        padding-top: 50px;
+        overflow: hidden;
+      }
+      */
+
+    /* .flowdiagmatPos{
+      margin-top: 1%;margin-right: 2.5%;margin-left: 3.5%;
+    }
+
+    .colPos{
+      padding-left: 4%;
+    }
+
+   .textPOS1{
+    padding-left: 21%;
+    }
+    .imgPOS1{
+      padding-left: 15%;
+    }
+    .lineColPos{
+      margin-left: -3%;
+    }
+    .line{
+      border-bottom: 1px solid silver;width: 129%;
+       padding-top: 24%;
+    }
+     
+    .txtcolor1{
+      color:#004070;
+    }
+    .txtcolor2{
+      color:#004070;
+    }
+    .textPadd1{
+      padding-left: 33%;
+    }
+    .imgPos1{
+      padding-left: 22%;
+    }
+    .dottedline{
+      border-bottom: 1px solid silver; width: 271%;
+         padding-top: 16%;border-bottom: dotted silver;
+    }
+    .textPadd2{
+      padding-left: 6%;
+    }
+    .textPadd3{
+      padding-left: 6%;
+    }
+    .textPadd4{
+      padding-left: 6%;
+    } */
+
+    .mat-card{
+      box-shadow: none;
+      border-radius: 0px;
+     
+    }
+
+    

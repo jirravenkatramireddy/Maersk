@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./assets/css/styles.resolution.544pxs.css";
+@import "./assets/css/styles.resolution.768pxs.css";
+@import "./assets/css/styles.resolution.900pxs.css";
+@import "./assets/css/styles.resolution.1200pxs.css";
+@import "./assets/css/styles.resolution.above1200pxs.css";
+@import "./assets/css/styles.resolution.1680pxs.css";
+@import "./assets/css/styles.resolution.1920pxs.css";
+
+/*font family*/
+@font-face {
+  font-family: IBM_sans_medium;
+  src: url("./assets/fonts/IBMPlexSans-Medium.ttf");
+}
+@font-face {
+  font-family: IBM_sans_light;
+  src: url("./assets/fonts/IBMPlexSans-Light.ttf");
+}
+@font-face {
+  font-family: IBMPlexSans-SemiBold;
+  src: url("./assets/fonts/IBMPlexSans-SemiBold.ttf");
+}
+@font-face {
+  font-family: IBMPlexSans-ExtraLight;
+  src: url("./assets/fonts/IBMPlexSans-ExtraLight-V01.otf");
+}
+@font-face {
+  font-family: IBMPlexSans-Regular;
+  src: url("./assets/fonts/IBMPlexSans-Regular.ttf");
+}
+
+/*body*/
+body {
+  font-family: IBM_sans_medium !important;
+  background-color: #f6f6f6 !important;
+  overflow-x: hidden;
+}

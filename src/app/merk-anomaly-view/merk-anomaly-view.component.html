@@ -1,0 +1,517 @@
+<app-loader [hidden]="!loaderProgress"></app-loader>
+
+
+<mat-card class="matcl">
+    <div class="row">
+        <div class="col-lg-1 col-md-1">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 ">
+                    <img src="../../../assets/images/iconBack.png" class="subheader1-img-icon pointer" (click)="gotoDetails()">
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <img src="../../../assets/images/iconBackSeperator.png" class="subheader1-icon-separator">
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-11 col-md-11">
+            <div class="row subheader1-align-data">
+                <div class="col-lg-2 col-md-2">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <img src="../../../assets/images/iconPort.png" class="subheder1-port-icon">
+                        </div>
+                        <div class="col-lg-9 col-md-9">
+                            <mat-label class="textco"> {{terminalID}} - {{terminalName}}</mat-label>
+                            <!-- <mat-label class="textco"> {{elements?.terminalID}}</mat-label> -->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-10 col-md-10">
+                    <div class="row">
+                        <!-- <div class="col-lg-1 col-md-1"></div> -->
+                        <div class="col-lg-2 col-md-2 ">
+                            <mat-label class="textco lisbonPos "> {{vesselName}} </mat-label>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <mat-label class="textco arrivaldatePos arrivalDateFontstyle">Arrival Date (Estimated): </mat-label>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <mat-label class="textco depaturePos">Departure Date (Estimated): </mat-label>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <mat-label class="textco">Arrival Date (Actual):</mat-label>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <mat-label class="textco">Departure Date (Actual):</mat-label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col-lg-1 col-md-1"></div> -->
+                        <div class="col-lg-2 col-md-2 ">
+                            <mat-label class="lisbonPos lisboncolor"> {{vesselCode}}|{{voyageNumber}} </mat-label>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <mat-label class="textco arrivaldatePos">{{eta}} </mat-label>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <mat-label class="textco depaturePos">{{etd}} </mat-label>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <mat-label class="textco"> {{eta}} </mat-label>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <mat-label class="textco"> {{etd}} </mat-label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<div class="anom">Discrepancies</div>
+<!-- <mat-card>
+    <div class="row">
+        <div class="col-lg-9 col-md-9">
+            <div class="row">
+
+                <div class="col-lg-1 col-md-1">
+                    <mat-card class="checkboxsize">
+
+                        <mat-card-content>
+                            <p class="valuesize">{{numSelected}}</p>
+                        </mat-card-content>
+
+                    </mat-card>
+                </div>
+
+                <div class="col-lg-2 col-md-2">
+                    <span class="selectedalign">Containers Selected</span>
+                </div>
+                <div class=" col-lg-2 col-md-2">
+
+                    <button class="create serachProper rowradius mt-0" *ngIf="numSelected>1">
+                        Approve all
+                    </button>
+                    <button class="create serachProper rowradius mt-0" *ngIf="numSelected==1">
+                        Approve
+                    </button>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <button class="create1 serachProper rowradius mt-0" *ngIf="numSelected>1">
+                        Reject all
+                    </button>
+                    <button class="create1 serachProper rowradius mt-0" *ngIf="numSelected==1">
+                        Reject
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</mat-card> -->
+<mat-card *ngIf="numSelected>=1" class="ContainerSelectedMatCard">
+    <div class="row" *ngIf="p2p">
+        <div class="col-lg-9 col-md-9">
+            <div class="row">
+
+                <div class="col-lg-1 col-md-1">
+                    <mat-card class="checkboxsize">
+                        <!-- <div class="row">
+                    <div class="col-lg-4 col-md-4"></div>
+                    <div class="col-lg-8 col-md-8">
+                        <span></span>
+                    </div>
+                </div> -->
+                        <mat-card-content>
+                            <p class="valuesize">{{numSelected}}</p>
+                        </mat-card-content>
+                        <!-- <div class="row">
+                    <div class="col-lg-2 col-md-2"></div>
+                    <div class="col-lg-10 col-md-10">
+                        <span class="valuesize">{{numSelected}}</span>
+                    </div>
+                </div> -->
+                    </mat-card>
+                </div>
+
+                <div class="col-lg-2 col-md-2">
+
+
+                    <span class="selectedalign">Containers Selected</span>
+
+
+                </div>
+                <div class="col-lg-2 col-md-2 reasonalign">
+                    <span class="selectedalign1"> Choose Reason Code</span>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <!-- <select [(ngModel)]="dropdownValue" name="first" class="dropdownPos">
+                        <option *ngFor="let value of options">
+                            {{value.name}}
+                        </option>
+                    </select> -->
+                    <select placeholder="Reason Code" [(ngModel)]="reason" name="reason" placeholder="Reason Code" [disabled]="!p2p || accepted">
+                        <option value="" disabled>Reason Code</option>
+                        <option value="CIP">CIP - Change in position</option>
+                        <option value="CWM">CWM - Cargo weight not matched</option>
+                        <option value="CTD">CTD - Cargo type difference</option>
+                        <option value="TIR">TIR - Technical issue with reefer</option>
+                        <option value="CDC">CDC - Customer delay of container</option>
+                        <option value="CNT">CNT - Container not traceable</option>
+                        <option value="CO">CO - Cut off</option>
+                        <option value="DIG">DIG - Delay in Gate-in</option>
+                    </select>
+                </div>
+                <div class=" col-lg-2 col-md-2">
+                    <!-- <button type="button" class="btn1 btn-info rowradius serachProper"  (click)="search(true);" >
+                    Save
+                  </button> -->
+                    <button class="create serachProper rowradius mt-0">
+                        Save
+                    </button>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <button class="create1 serachProper rowradius mt-0">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row" *ngIf="!p2p">
+        <div class="col-lg-9 col-md-9">
+            <div class="row">
+
+                <div class="col-lg-1 col-md-1">
+                    <mat-card class="checkboxsize">
+
+                        <mat-card-content>
+                            <p class="valuesize">{{numSelected}}</p>
+                        </mat-card-content>
+
+                    </mat-card>
+                </div>
+
+                <div class="col-lg-2 col-md-2">
+                    <span class="selectedalign">Containers Selected</span>
+                </div>
+                <div class=" col-lg-2 col-md-2">
+
+                    <button class="create serachProper rowradius mt-0" *ngIf="numSelected>1">
+                        Approve all
+                    </button>
+                    <button class="create serachProper rowradius mt-0" *ngIf="numSelected==1">
+                        Approve
+                    </button>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <button class="create1 serachProper rowradius mt-0" *ngIf="numSelected>1">
+                        Reject all
+                    </button>
+                    <button class="create1 serachProper rowradius mt-0" *ngIf="numSelected==1">
+                        Reject
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</mat-card>
+<mat-card class="flowdiagmatPos">
+
+    <div class="container-fluid tablecont overflow-auto">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+        </mat-form-field>
+            <table mat-table [dataSource]="dataSource" matSort matSortActive="alertDate" matSortDirection="desc">
+
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()"
+                            [aria-label]="checkboxLabel()">
+                        </mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)"
+                            [aria-label]="checkboxLabel(row)">
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="equipment">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font1"> Equipment No.
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="pop" data-toggle="modal" data-target="#myModal1">{{element.preContainerId}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Position </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.preStowage}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="slotoperator">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Slot Operator </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.preSlotOperator}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="oog">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> OOG
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.preIsOOG}}
+                    </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="iso">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> ISO Code
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.preISO}} </td>
+                </ng-container>
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font">Empty Status
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.preIsEmpty}} </td>
+                </ng-container>
+                <ng-container matColumnDef="vgm">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font">VGM
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.preVGM}} </td>
+                </ng-container>
+                <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Weight
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.preWeight}} </td>
+                </ng-container>
+                <ng-container matColumnDef="hazardous">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Hazardous
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.preIsDG}} </td>
+                </ng-container>
+                <ng-container matColumnDef="reefer">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font">Reefer
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.preIsReefer}} </td>
+                </ng-container>
+                <ng-container matColumnDef="statuscode">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font">Overall Status
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.statusCode}} </td>
+                </ng-container>
+                <ng-container matColumnDef="reasoncode">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font">Reason Code
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tabledata"> {{element.reasonCode}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+            </table>
+    </div>
+
+
+    <div class="modal fade" id="myModal1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content matcon">
+                <div class="modal-body">
+                    <div class="row ">
+                        <div class="col-md-11">
+                            <mat-label class="viewanomaly">View Discrepancies</mat-label>
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="close" data-dismiss="modal">
+                                <img src="../../assets/images/btnClose.png" class="close">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="split left">
+                            <div class="row subl">Planned activity record</div>
+                            <div class="row matl">
+                                <img src="../../assets/images/iconContainerAnamoly.png" class="cnoimg">
+                                <p class="cno">Container Number
+                                    <br>{{row?.preContainerId}}</p>
+                            </div>
+                            <div class="row">
+                                <table id="classTable" class="table table2">
+                                    <thead></thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tabcol">Restow</td>
+                                            <td class="tabcol leftalign">{{row?.preStowage}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tabcol">Empty</td>
+                                            <td class="leftalign">{{row?.preIsEmpty}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tabcol">Slot Operator</td>
+                                            <td class="leftalign">{{row?.preSlotOperator}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tabcol">OOG</td>
+                                            <td class="leftalign">{{row?.preIsOOG}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="vl">
+                        </div>
+                        <div class="split right">
+                            <div class="row subr">Activity record</div>
+                            <div class="row matr">
+                                <img src="../../assets/images/iconContainerAnamoly.png" class="cnoimg">
+                                <p class="cno">Container Number
+                                    <br>{{row?.terContainerId}}</p>
+                            </div>
+                            <div class="row">
+                                <table id="classTable" class="table table2">
+                                    <thead></thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tabcol">Restow</td>
+                                            <td class="leftalign" [ngStyle]="{'color' : row?.preStowage===row?.terStowage ?'#4a4a4a':'red'}">{{row?.terStowage}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tabcol">Empty</td>
+                                            <td class="leftalign" [ngStyle]="{'color':row?.preIsEmpty===row?.terIsEmpty?'#4a4a4a':'red'}">{{row?.terIsEmpty}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tabcol">Slot Operator</td>
+                                            <td class="leftalign" [ngStyle]="{'color':row?.preSlotOperator===row?.terSlotOperator?'#4a4a4a':'red'}">{{row?.terSlotOperator}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tabcol">OOG</td>
+                                            <td class="leftalign" [ngStyle]="{'color':row?.preIsOOG===row?.terIsOOG?'#4a4a4a':'red'}">{{row?.terIsOOG}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row reasoncode">
+                                <select placeholder="Reason Code" [(ngModel)]="reason" name="reason" placeholder="Reason Code" [disabled]="!p2p || accepted">
+                                    <option value="" disabled>Reason Code</option>
+                                    <option value="CIP">CIP - Change in position</option>
+                                    <option value="CWM">CWM - Cargo weight not matched</option>
+                                    <option value="CTD">CTD - Cargo type difference</option>
+                                    <option value="TIR">TIR - Technical issue with reefer</option>
+                                    <option value="CDC">CDC - Customer delay of container</option>
+                                    <option value="CNT">CNT - Container not traceable</option>
+                                    <option value="CO">CO - Cut off</option>
+                                    <option value="DIG">DIG - Delay in Gate-in</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center btnpad" *ngIf="p2p">
+                        <button type="button" class="btn btn-info details" data-dismiss="modal" [disabled]="accepted" (click)="ReasonSubmit(row.preContainerId)">
+                            Submit reason for delay
+                        </button>
+                    </div>
+                    <div class="row d-flex justify-content-center btnpad" *ngIf="!p2p">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-info details1" data-dismiss="modal" [disabled]="disable || accepted" (click)="ApproveRejectSubmit('rejected',row.preContainerId)">Reject </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-info details" data-dismiss="modal" [disabled]="disable || accepted" (click)="ApproveRejectSubmit('accepted',row.preContainerId)">Approve </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </mat-card>
+    <div class="row GateTableCards">
+        <div class="col-md-6 pr-0">
+            <div class="mx-3 mt-3">
+                <mat-label class="GateInMatLabelProperties">Gate-In </mat-label>
+            </div>
+
+            <mat-card class="GateInMarCardProperties">
+                <div class="container-fluid ">
+                    <mat-form-field>
+                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                    </mat-form-field>
+                    <table mat-table [dataSource]="dataSource1" matSort matSortActive="alertDate" matSortDirection="desc">
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="containerNo">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Container No.
+                            </th>
+                            <td mat-cell *matCellDef="let element"> {{element.containerNo }} </td>
+                        </ng-container>
+
+
+                        <ng-container matColumnDef="gateIn">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Gate-In Date
+                            </th>
+                            <td mat-cell *matCellDef="let element"> {{element.gateIn}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="storageDays">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Storage Days
+                            </th>
+                            <td mat-cell *matCellDef="let element"> {{element.storageDays}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                    </table>
+
+                </div>
+            </mat-card>
+
+        </div>
+
+        <div class="col-md-6 pr-0">
+            <div class="mx-3 mt-3">
+                <mat-label class="GateInMatLabelProperties">Gate-Out </mat-label>
+            </div>
+
+            <mat-card class="GateInMarCardProperties">
+                <div class="container-fluid ">
+                    <mat-form-field>
+                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                    </mat-form-field>
+                    <table mat-table [dataSource]="dataSource1" matSort matSortActive="alertDate" matSortDirection="desc">
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="containerNo">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Container No.
+                            </th>
+                            <td mat-cell *matCellDef="let element"> {{element.containerNo }} </td>
+                        </ng-container>
+
+
+                        <ng-container matColumnDef="gateIn">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Gate-In Date
+                            </th>
+                            <td mat-cell *matCellDef="let element"> {{element.gateIn}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="storageDays">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header class="mat-table-header-font"> Storage Days
+                            </th>
+                            <td mat-cell *matCellDef="let element"> {{element.storageDays}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                    </table>
+
+                </div>
+            </mat-card>
+
+        </div>
+    </div>

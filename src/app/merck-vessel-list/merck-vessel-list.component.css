@@ -1,0 +1,58 @@
+/* table {
+    width: 100%;
+  }
+
+  .mat-row:nth-child(even){
+    background-color:#fff ! important;
+                }
+
+.mat-row:nth-child(odd){
+    background-color:#E4F8FF;
+                 }
+ .mat-header-cell {
+     
+      font-size: 18px;
+     
+   }   
+                  
+  :host /deep/ .mat-tab-label {
+      height: 80px;
+      font-size: 18px;
+      background-color: whitesmoke;
+      opacity: 1.6;
+      border-color: aliceblue;
+      border-left: 10px solid white;
+      border-right: 10px solid white;
+  }  
+  
+  :host /deep/ .mat-ink-bar{
+      height: 8px;
+      border-left: 10px solid white;
+    border-right: 10px solid white;
+    
+
+  }
+  
+  
+
+  :host /deep/ .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: skyblue;
+}
+
+  
+
+  td.mat-cell, td.mat-footer-cell, th.mat-header-cell{
+    border-bottom-width: 0px;
+  }
+
+  .mat-tab-group{
+      background-color: white;
+  }
+
+  .mat-table {
+    font-family: IBMPlexSans-Regular !important;
+  }
+  
+
+   */
+  

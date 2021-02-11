@@ -1,0 +1,10 @@
+<ng-template #main>
+  <span class="myhover">
+    <div class="lds-eclipse ">
+      <div></div>
+    </div>
+  </span>
+</ng-template>
+
+
+<div *ngIf="loadertype=='small'; else main" class="smallloader"></div>

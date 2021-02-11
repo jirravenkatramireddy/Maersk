@@ -1,0 +1,171 @@
+<mat-card class="terminal-align" >
+    
+    <div class="row">
+    <!-- <div class="col-md-1"></div> -->
+    
+<div class="col-md-2">
+<mat-card class="matterminalPos">
+    <div class="col-md-12" >
+        <div class="row">
+            <div class="col-lg-5 col-md-5"></div>
+            <div class="col-lg-2 col-md-2">
+                    <img src="../../../assets/images/iconPort.png" class="terminal-port-icon" >
+                </div>
+                <div class="col-lg-4 col-md-4"></div>
+        </div>
+    <div class="row">
+        
+        <div class="col-lg-10 col-md-10" class="ContainerCountCol">
+            <div class="row " class="ContainerCountRow">
+
+                <mat-label class="textcolor">
+                    Container Count
+                </mat-label>
+            </div>
+            <div class="row "  >
+                <div class="col-lg-3 col-md-3">
+
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    <mat-label class="textnumcolor1 ContainerCountValueRow">3800</mat-label>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    
+</mat-card>
+
+</div>
+
+
+<div class="col-md-4 DischargeCountPos"  >
+    
+<mat-card (click)="gotoAnomaliespage()">
+        <div class="row pt-2">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-6 col-md-6">
+                    <mat-label class="textcolor">MYPTP-Discharge count</mat-label>
+                </div>
+                <div class="col-lg-5 col-md-5 ">
+                   </div>
+            </div>
+            <div class="row">
+                    <div class="col-lg-1 col-md-1"></div>
+                    <div class="col-lg-5 col-md-5">
+                          <mat-label class="textnumcolor1">200 / <span class="greenColor">180</span></mat-label>
+                               </div>
+                       <div class="col-lg-1 col-md-1"></div>      
+                        <div class="col-lg-5 col-md-5 ">
+                                <mat-label class="textcolor" >Discrepancies - <span class="redColor">{{dischargeAnamaliesCount}}</span></mat-label>
+            
+                            </div>
+            </div>
+</mat-card>
+
+
+        <mat-card class="LoadCountPos">
+                <div class="row ">
+                        <div class="col-lg-1 col-md-1"></div>
+                        <div class="col-lg-6 col-md-6">
+                            <mat-label class="textcolor">MYPTP-Load count</mat-label>
+                             </div>
+                        <div class="col-lg-5 col-md-5 ">
+                             </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-lg-1 col-md-1"></div>
+                            <div class="col-lg-5 col-md-5">
+                                  <mat-label class="textnumcolor1">3800 / <span class="greenColor">3600</span></mat-label>
+                                       </div>
+                                       <div class="col-lg-1 col-md-1"></div> 
+                                <div class="col-lg-5 col-md-5 ">
+                                        <mat-label class="textcolor" >Discrepancies - <span class="redColor">{{loadAnamoliescount}}</span></mat-label>
+                    
+                                    </div>
+                    </div>
+        </mat-card>
+
+</div>
+<div class="col-md-5">
+    <mat-card class="matDeliveryPort">
+                  <div class="col-md-6"></div>
+                        <div class="row pt-2 deliveryPortImgRow" >
+                                <!-- <div class="col-md-1"></div> -->
+                                 <div class="col-lg-4 col-md-4">
+                                        
+                                        <img src="../../../assets/images/iconDeliveryPort.png">
+                                     
+                                 </div>
+                                 
+                                 <div class="col-lg-4 col-md-4 deliveryPortImg2">
+                                        <img src="../../../assets/images/iconDeliveryPort.png">
+                 
+                                 </div>
+                                 
+                                 <div class="col-lg-4 col-md-4 deliveryPortImg3" >
+                                        <img src="../../../assets/images/iconDeliveryPort.png">
+                                 </div>
+                             </div>
+                  
+                  <div class="col-md-6"></div>
+                    <div class="row pt-4 deliveryPortLabelRow" >
+                       <!-- <div class="col-md-1"></div> -->
+                        <div class="col-lg-4 col-md-4">
+                               
+                            <mat-label class="textcolor">1st Delivery Port</mat-label>
+                            
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-4">
+                            <mat-label class="textcolor">2nd Delivery Port</mat-label>
+        
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-4">
+                            <mat-label class="textcolor">Final Delivery Port</mat-label>
+                        </div>
+                    </div>
+                    <div class="row teminal-align-element" >
+                        
+                        <div class="col-lg-3 col-md-3">
+                             <mat-label class="textcolor">USCHS - </mat-label>
+                                    <mat-label class="textnumcolor1">720</mat-label>
+                                </div>
+                            
+                                <div class="col-lg-1 col-md-1">
+        
+                                </div>
+                        <div class="col-lg-3 col-md-3">
+                            
+                                <!-- <div class="col-lg-2 col-md-2"></div> -->
+                                <div class="col-lg-10 col-md-10">
+                                    <mat-label class="textcolor">USPS1 - </mat-label>
+                                    <mat-label class="textnumcolor1">340</mat-label>
+                                </div>
+                            
+                        </div>
+                        <div class="col-lg-1 col-md-1">
+        
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            
+                                <!-- <div class="col-lg-2 col-md-2"></div> -->
+                                
+                                    <mat-label class="textcolor">USPHL -
+        
+                                    </mat-label>
+                                    <mat-label class="textnumcolor1">2740</mat-label>
+                                
+                        </div>
+                    </div>
+                
+    </mat-card>
+</div>
+
+</div>
+
+
+
+</mat-card>

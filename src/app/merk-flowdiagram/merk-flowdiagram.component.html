@@ -1,0 +1,310 @@
+<app-loader [hidden]="!loaderProgress"></app-loader>
+<mat-card class="matcl" >
+    <div class="row">
+        <div class="col-lg-1 col-md-1">
+            <div class="row">
+                <div class="col-lg-6 col-md-6"  >
+                    <img src="../../../assets/images/iconBack.png" class="subheader1-img-icon pointer"  (click)="gotoDashboard()">
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <img src="../../../assets/images/iconBackSeperator.png" class="subheader1-icon-separator">
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-11 col-md-11" >
+            <div class="row subheader1-align-data">
+                <div class="col-lg-2 col-md-2">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <img src="../../../assets/images/iconPort.png" class="subheder1-port-icon ">
+                        </div>
+                        <div class="col-lg-9 col-md-9">
+                            <mat-label class="textco"> {{elements?.terminalID}} - {{elements?.terminalName}}</mat-label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-10 col-md-10">
+                    <div class="row">
+                        <!-- <div class="col-lg-1 col-md-1"></div> -->
+                        <div class="col-lg-2 col-md-2 ">
+                            <mat-label class="textco lisbonPos "> {{elements?.vesselName}} </mat-label>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <mat-label class="textco arrivaldatePos arrivalDateFontstyle">Arrival Date (Estimated): </mat-label>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <mat-label class="textco depaturePos">Departure Date (Estimated): </mat-label>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <mat-label class="textco">Arrival Date (Actual):</mat-label>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <mat-label class="textco">Departure Date (Actual):</mat-label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col-lg-1 col-md-1"></div> -->
+                        <div class="col-lg-2 col-md-2 ">
+                            <mat-label class="lisbonPos lisboncolor" > {{elements?.vesselCode}}|{{elements?.voyageNumber}} </mat-label>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <mat-label class="textco arrivaldatePos">{{elements?.eta}} </mat-label>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <mat-label class="textco depaturePos" >{{elements?.etd}} </mat-label>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <mat-label class="textco"> {{elements?.eta}} </mat-label>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <mat-label class="textco"> {{elements?.etd}} </mat-label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<mat-card class="flowdiagmatPos" >
+<div class="col-md-12 mx-3 " class="colPos" >
+    <div class="row">
+      <div class="col-md-1">
+         <span class="textPOS1 txtcolor1">{{elements?.previousport}}</span>
+         <br>
+         <img src="./assets/images/iconVessel.png" class="imgPOS1"  >
+      </div>
+      <div class="col-md-4"  style="margin-left: -3%;">
+       <div class="line" ></div>
+      </div>
+      <div class="col-md-1 center">
+         <span class="txtcolor1 textPadd1" >{{elements?.nextport}}</span>
+         <br>
+         <img src="./assets/images/iconMYPTP.png" class="imgPos1" >
+      </div>
+      <div class="col-md-4" style="margin-left: 0.5%;">
+         <div class="dottedline"></div>
+      </div>
+      <div class="col-md-2">
+         <span class="txtcolor2 textPadd2" >{{elements?.finalport}}</span>
+         <br>
+         <img src="./assets/images/iconVessel.png" class="imgPos2">
+      </div>
+      <!-- <div class="col-md-1" style="margin-left: -3%;">
+         
+      </div> -->
+      <!-- <div class="col-md-1" style="margin-left: 5%;">
+         <span class="txtcolor2 textPadd3" >USPS1</span> 
+         <br>
+         <img src="./assets/images/iconVessel.png" >
+      </div>
+      <div class="col-md-1" style="margin-left: -3%;">
+        
+      </div>
+      
+      <div class="col-md-1" style="margin-left: 4%;">
+         <span class="txtcolor2 textPadd4">USPHL</span> 
+         <br>
+         <img src="./assets/images/iconVessel.png" >
+      </div>-->
+    </div>
+  </div> 
+
+</mat-card>
+<mat-card class="terminal-align" >
+    
+    <div class="row">
+    <!-- <div class="col-md-1"></div> -->
+    
+<div class="col-md-2">
+<mat-card class="matterminalPos">
+    <div class="col-md-12" class="ContainerCountMainCol">
+        <div class="row">
+            <div class="col-lg-5 col-md-5"></div>
+            <div class="col-lg-2 col-md-2">
+                    <img src="../../../assets/images/iconPort_timeline.png" class="terminal-port-icon" >
+                </div>
+                <div class="col-lg-4 col-md-4"></div>
+        </div>
+    <div class="row">
+        
+        <div class="col-lg-10 col-md-10" class="ContainerCountCol">
+            <div class="row " class="ContainerCountRow">
+
+                <mat-label class="textcolor">
+                    Container Count
+                </mat-label>
+            </div>
+            <div class="row "  >
+                <div class="col-lg-3 col-md-3">
+
+                </div>
+                <div class="col-lg-7 col-md-7 ContainerCountValueRow">
+                    <mat-label class="textnumcolor2 ">{{elements?.containercount}}</mat-label>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    
+</mat-card>
+
+</div>
+
+
+<div class="col-md-4 DischargeCountPos"  >
+    
+<mat-card class="DischargeCountPos1" (click)="gotoDischargeAnomaliespage()"  style="cursor: pointer">
+  
+        <div class="row ">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-6 col-md-6">
+                    <mat-label class="textcolor">{{elements?.terminalID}}-Discharge count</mat-label>
+                </div>
+                <!-- <div class="col-lg-1 col-md-1 ">
+                  </div> -->
+                  <div class="col-lg-5 col-md-5 costalign">
+                     <mat-label class="textcolor" >Cost - <span class="greenClr">$2000</span></mat-label>
+                 </div>
+            </div>
+            <div class="row">
+                    <div class="col-lg-1 col-md-1"></div>
+                    <div class="col-lg-5 col-md-5">
+                          <mat-label class="textnumcolor1">{{elements?.predislistcount}} / <span class="greenColor">{{elements?.terdislistcount}}</span></mat-label>
+                               </div>
+                       <div class="col-lg-1 col-md-1"></div>      
+                        <div class="col-lg-5 col-md-5 anamolieAlign"  >
+                                <mat-label class="textcolor" >Discrepancies - <span class="redColor">{{elements?.discanamoliescount}}</span></mat-label>
+            
+                            </div>
+            </div>
+</mat-card>
+
+
+        <mat-card class="LoadCountPos" (click)="gotoLoadAnomaliespage()" style="cursor: pointer">
+                <div class="row ">
+                        <div class="col-lg-1 col-md-1"></div>
+                        <div class="col-lg-6 col-md-6">
+                            <mat-label class="textcolor">{{elements?.terminalID}}-Load count</mat-label>
+                             </div>
+                        <!-- <div class="col-lg-1 col-md-1 ">
+                             </div> -->
+                             <div class="col-lg-5 col-md-5 costalign">
+                                <mat-label class="textcolor" >Cost - <span class="greenClr">$2000</span></mat-label>
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-lg-1 col-md-1"></div>
+                            <div class="col-lg-5 col-md-5">
+                                <mat-label class="textnumcolor1">{{elements?.preloadlistcount}} / <span class="greenColor">{{elements?.terloadlistcount}}</span></mat-label>
+                                       </div>
+                                       <div class="col-lg-1 col-md-1"></div> 
+                                <div class="col-lg-5 col-md-5 anamolieAlign ">
+                                        <mat-label class="textcolor" >Discrepancies - <span class="redColor">{{elements?.loadanamoliescount}}</span></mat-label>
+                    
+                                    </div>
+                    </div>
+        </mat-card>
+
+</div>
+<div class="col-md-5">
+    <mat-card class="matDeliveryPort">
+                  <div class="col-md-6"></div>
+                        <div class="row pt-2 deliveryPortImgRow" >
+                                <!-- <div class="col-md-1"></div> -->
+                                 <div class="col-lg-4 col-md-4">
+                                        
+                                        <!-- <img src="../../../assets/images/iconDeliveryPort.png"> -->
+                                     
+                                 </div>
+                                 
+                                 <div class="col-lg-4 col-md-4 deliveryPortImg2">
+                                        <img src="../../../assets/images/iconDeliveryPort.png" class="deliveryPortImg2">
+                 
+                                 </div>
+                                 
+                                 <div class="col-lg-4 col-md-4 deliveryPortImg3" >
+                                        <!-- <img src="../../../assets/images/iconDeliveryPort.png" class="deliveryPortImg3"> -->
+                                 </div>
+                             </div>
+                  
+                  <div class="col-md-6"></div>
+                    <div class="row pt-4 deliveryPortLabelRow" >
+                       <!-- <div class="col-md-1"></div> -->
+                        <div class="col-lg-4 col-md-4">
+                               
+                            <!-- <mat-label class="textcolor">1st Delivery Port</mat-label> -->
+                            
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-4">
+                            <mat-label class="textcolor">Final Delivery Port</mat-label>
+        
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-4">
+                            <!-- <mat-label class="textcolor">Final Delivery Port</mat-label> -->
+                        </div>
+                    </div>
+                    <div class="row teminal-align-element" >
+                        
+                        <div class="col-lg-3 col-md-3">
+                             <!-- <mat-label class="textcolor">USCHS - </mat-label> -->
+                                    <!-- <mat-label class="textnumcolor1">720</mat-label> -->
+                                </div>
+                            
+                                <div class="col-lg-1 col-md-1">
+        
+                                </div>
+                        <div class="col-lg-3 col-md-3  ">
+                            
+                                <!-- <div class="col-lg-2 col-md-2"></div> -->
+                                <div class="col-lg-10 col-md-10 col-xl-12 USPS1Pos">
+                                    <mat-label class="textcolor">{{elements?.finalport}} - </mat-label>
+                                    <mat-label class="textnumcolor1">0</mat-label>
+                                </div>
+                            
+                        </div>
+                        <div class="col-lg-1 col-md-1">
+        
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            
+                                <!-- <div class="col-lg-2 col-md-2"></div> -->
+                                
+                                    <!-- <mat-label class="textcolor">USPHL -
+        
+                                    </mat-label> 
+                                    <mat-label class="textnumcolor1">2740</mat-label>-->
+                                
+                        </div>
+                    </div>
+                
+    </mat-card>
+</div>
+
+</div>
+
+
+
+</mat-card>
+ <mat-card class="footerMatCard">
+ <div class="row">
+   <div class="footerColor">Source : {{parentMessage}}</div>
+ </div>
+ </mat-card>
+
+
+
+
+
+
+
+
+
+
+
+

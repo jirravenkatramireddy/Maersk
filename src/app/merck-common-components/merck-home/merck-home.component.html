@@ -1,0 +1,45 @@
+<app-merck-header></app-merck-header>
+<div class="row">
+  <div class="col-md-1">
+    <ul class="nav nav-tabs flex-column bg-lights1" id="myTab" role="tablist">
+      <li class="nav-item borderColor1 ">
+
+        <a class="nav-link active sidenav my-2" id="table-tab" data-toggle="tab" href="#table" role="tab" aria-controls="table" aria-selected="true">
+          <div class="row">
+            <img src="./assets/images/iconInventory.png" class="iconcost" />
+          </div>
+          <div class="row sidealign">
+            <span>Inventory</span>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item borderColor">
+
+        <a class="nav-link sidenav my-2" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="false">
+          <div class="row">
+            <img src="./assets/images/iconContract.png" class="iconcost" />
+          </div>
+          <div class="row sidealign">
+            <span>Contract</span>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item borderColor">
+
+        <a class="nav-link sidenav my-2" id="graph-tab" data-toggle="tab" href="#graph" role="tab" aria-controls="graph" aria-selected="false">
+          <div class="row">
+            <img src="./assets/images/iconCostView.png" class="iconcost" />
+          </div>
+          <div class="row sidealign">
+            <span>Cost View</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <div class=" col-md-11">
+    <router-outlet (activate)="context = $event" class="background-color: #f1f1f1 !important;">
+    </router-outlet>
+  </div>
+</div>

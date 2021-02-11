@@ -1,0 +1,80 @@
+<section class="login" title="Login section">
+  <div class="container-fluid no-padding">
+    <div class="row">
+      <div class="col-md-6 login-bg-img">
+        <!-- <div class="login-bg-img"> -->
+        <img src="./assets/images/loginImage.png" class="loginImage" />
+        <!-- </div> -->
+      </div>
+      <div class="col-md-6 no-padding">
+        <div class="login-title">
+          <img src="./assets/images/logoMaersk.png" class="logoicon" />
+        </div>
+        <div class="row  login-title1 iconpos" *ngIf="validationResult">
+          <img src="./assets/images/iconError.png" class="iconerror" />
+          <p class="error">Error: {{ message }}</p>
+        </div>
+        <div class="row login-mytp-align">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <mat-label>Choose Terminal</mat-label>
+              <mat-select [(value)]="selected" [(ngModel)]="terminal">
+                <mat-option value="MYTPPPS-TANJUNG PELEPAS"
+                  >MYTPPPS - TANJUNG PELEPAS</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" [(ngModel)]="userName" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                type="password"
+                placeholder="Password"
+                [(ngModel)]="password"
+                (keyup)="
+                  $event.keyCode == 13 ? LoginToApp(userName, password) : null
+                "
+              />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <button
+              class="create"
+              (click)="login(terminal, userName, password)"
+              [disabled]="!selected"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+
+        <div class="row power-block-align">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <img
+              src="./assets/images/poweredByBlockchain.png"
+              class="powericon"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
